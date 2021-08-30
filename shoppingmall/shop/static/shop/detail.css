@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+/*
+section
+*/
+#grid{
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+}
+
+/*article1*/
+.parent{
+    display:flex;
+    flex-direction:column;
+    margin-top:160px;   
+} 
+
+.parent div{
+    margin:15px; 
+    align-self:center;
+}
+
+.parent div img{
+    width:390px;
+    height:500px;
+}
+
+/*article2*/
+.parent2{
+    position:fixed; z-index:1;  
+    top:150px; right:50px;
+    padding:5px; margin:20px; 
+}
+
+.parent2 .info{
+    color:skyblue;
+}
+
+.parent2 select{
+    font-size: 12px; font-weight: 400;
+    line-height: 1.5;
+    padding: 10px;  margin: 10px;
+    border: none; outline:none;
+    border-bottom:2px solid black; 
+    width:370px;
+    background:transparent;
+}
+
+.parent2 #num{
+    font-size:13px;
+    width:370px; height:30px;
+    border:none; outline:none;
+    border-bottom: 2px solid black;
+    background:transparent;  
+}
+
+.parent2 > form > .buy{
+    display:inline;
+    font-size:14px; font-weight:600;
+    color:black; background:white;
+    width:190px; height:50px;
+    margin:15px 10px 0px 10px;
+    border:none; border:2px solid black;
+    border-radius:20px;
+    text-align:center;
+    
+}
+

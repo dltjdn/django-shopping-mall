@@ -1,0 +1,39 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+        <!--section1-->
+        <section class="section1" style="margin-top:0;"> 
+
+            <form action="{% url 'searchResult' %}" method="get">
+                {% csrf_token %}
+                <label for="search">
+                    <img src="{% static 'shop/img/search.png' %}" width="50px" height="50px">
+                </label>
+                <input type="text" id="search" placeholder="검색어를 입력하세요" name="q">
+                <input type="submit" id="submit" value="Search">
+            </form>
+
+        </section>
+
+        <hr width="100%" size="2">
+
+
+        <!--section2 검색결과 -->
+        <section class="section2">
+            {% if products %}
+                {% for product in products %}
+                <div class="list" >
+                    <a href="{% url 'detail' product.num1 product.num2 %}">
+                        <img src="{{ product.photo1.url }}" width="200px" height="270px">  
+                        <h4>{{product.name}}</h4>
+                    </a>
+                </div>
+                {% endfor %}
+            {% elif query %}
+                <div class="list2">
+                    <h3><i>Search Word({{ query }}) Not Found</i><h3>
+                </div>
+            {% endif %}
+        </section>
+
+{% endblock %}

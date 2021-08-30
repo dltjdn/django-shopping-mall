@@ -1,0 +1,42 @@
+.qnaDetailSection{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column; 
+}
+
+.qnaDetail{
+    justify-content:center;
+    align-items:center;
+    border-collapse:collapse;
+    border-bottom:1px solid silver;
+}
+
+
+
+.qnaDetail tr{
+    border-bottom:1px solid silver;
+    text-align:left;
+
+}
+
+.qnaDetail tr th{
+    width:70px;
+}
+
+.qnaDetail tr td{
+    padding:20px;
+}
+
+.qnaDetailSection .qnaUpdate, .qnaDetailSection .qnaDelete{
+    margin:40px;
+    padding:5px;
+    font-size:16px;
+    border-bottom:1.5px solid black; 
+    width:80px;
+    text-align:center;
+}
+
+.qnaDetailSection .qnaDelete{
+    margin-bottom:100px;
+}

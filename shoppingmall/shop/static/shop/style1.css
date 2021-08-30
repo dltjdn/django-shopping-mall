@@ -1,0 +1,223 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+ 
+ /*
+ section1
+ */
+ .main {
+     width:100%; height:100%; 
+     background-size:cover; 
+     position:center; 
+     background-repeat:none;
+ }
+ .main .inner{
+    width: 1100px; height: 600px; 
+    margin: 0 auto;
+}
+
+ /*
+ section2, section2.2
+ */
+.best{
+    display:block;
+    margin-top:50px;
+}
+ .best h2{
+    font-family: 'Castoro', serif;
+    font-size:27px; font-weight:bold;
+    text-align:center; 
+    margin-bottom:20px;
+    margin-top:80px;
+}
+
+.best .bestInner, .best2 .best2Inner{
+    display:flex; flex-direction:row; 
+    justify-content:center; align-content:center;
+}
+
+.best2{
+    margin-top:50px;
+}
+
+.best .bestInner a,.best2 .best2Inner a{
+    padding:20px;
+    margin:20px
+}
+
+.best2 .best2Inner a{
+    margin-top:0px;
+    padding-top:0px;
+}
+
+.best .bestInner a:hover,.best2 .best2Inner a:hover{
+    cursor: pointer;
+    filter: contrast(30%);
+    
+}
+
+
+/*
+section3
+*/
+.new{
+    width:100%; height:auto;
+    background-color:gray; 
+    background-repeat:no-repeat;
+    background-size:cover; 
+    background-position:center;
+    padding:80px 0;
+    color:whitesmoke;
+}
+
+.new .inner {
+    width:1050px; height:auto;
+    margin:0 auto; 
+    text-align:center;
+    overflow:hidden;
+}
+
+/*NEW IN*/
+.new .inner h2{
+    font-family: 'Castoro', serif;     
+    font-size:29px; font-weight:500; 
+    margin-bottom:40px; 
+} 
+
+/*작은 사진 두 개*/
+.new .inner ul{
+    width:30%; height:auto;
+    float:left;
+    margin-bottom:30px;
+} 
+.new .inner ul li{width:100%;}
+.new .inner ul li h3{
+    color:whitesmoke;
+    font-weight:400;
+}
+
+.new .inner ul li a { 
+    display:block;
+    width:100%; text-align:left;
+}
+.new .inner ul li a .img{
+    width:100%; height:220px;
+    overflow:hidden;
+}
+
+.new .inner ul li a .img img{width:100%;}
+
+.new .inner ul li a .img img:hover{
+    cursor: pointer;
+    filter: contrast(30%);
+}
+
+/*큰 사진 두 개*/
+.new .row {
+    width:70%; height:auto;
+}
+#second{
+    float: right; 
+    width:70%;
+ }
+.new .row .guide{
+    float:left; 
+    width:50%; height:486.67px;
+    padding:0 0 0 40px;
+    box-sizing:border-box;
+}
+.new .row .guide h3{
+    text-align:left;
+    color:whitesmoke;
+    font-weight:400;
+}
+
+.new .row .guide img:hover{
+    cursor: pointer;
+    filter: contrast(30%);
+}
+
+/*
+section3-2
+*/
+.new2{
+    width:100%; height:auto;
+    background-color:gray; 
+    background-repeat:no-repeat; 
+    background-size:cover; 
+    background-position:center;
+    padding:0 0 80px 0;
+}
+    
+.new2 .inner {
+    width:1050px; height:auto;
+    margin:0 auto; 
+    text-align:center;
+    overflow:hidden;
+}
+
+/*작은 사진 두 개*/
+.new2 .inner ul{
+    width:30%; height:auto;
+    float:right; 
+    margin-bottom:30px;
+} 
+.new2 .inner ul li{width:100%;}
+.new2 .inner ul li h3{
+    color:whitesmoke;
+    font-weight:400;
+}
+.new2 .inner ul li a { 
+    display:block;
+    width:100%; text-align:left;
+}
+.new2 .inner ul li a .img{
+    width:100%; height:220px;
+    overflow:hidden;
+}
+.new2 .inner ul li a .img img{width:100%;}
+.new2 .inner ul li a .img img:hover{ 
+    cursor: pointer;
+    filter: contrast(30%);
+} 
+
+/*큰 사진 두 개*/
+.new2 .row {
+    width:70%; height:auto;
+}
+#second2{
+    float: left; width:70%;
+ }
+.new2 .row .guide{
+    float:left; 
+    width:50%; height:486.67px;
+    padding:0 60px 0 0; 
+    box-sizing:border-box;
+}
+.new2 .row .guide h3{
+    text-align:left;
+    color:whitesmoke; font-weight:400;
+}
+.new2 .row .guide img:hover{
+    cursor: pointer;
+    filter: contrast(30%);
+}
+
+
+/*
+section4
+*/
+#grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    margin:50px;
+}
+#grid .sea{
+    text-align:right;
+    margin-right:40px;
+}
+#grid .info{
+    text-align:left;
+    margin-left:40px;
+}
+

@@ -1,0 +1,34 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="searchWrite">
+    <form action="{% url 'qnaSearch' %}" 
+    method="get" class="qnaLeft">
+        {% csrf_token %}
+        <label for="search">
+            <img src="{% static 'shop/img/search.png' %}" width="20px" height="20px">
+        </label>
+        <input type="text" id="qnaSearch" placeholder="작성자를 입력하세요" name="q">
+        <input type="submit" id="qnaSubmit" value="Search">
+    </form>
+    
+    <a href="{% url 'qnaCreate' %}" class="qnaRight">Write</a>
+</section>
+
+
+<section class="qnaMainSection">
+    <table width="60%" height=200 bordercolor="white" 
+    cellspacing="5" class="qnaMain">
+    {% for qna in qnas %}   
+        <tr id="qnaList" style="border:1px solid black">
+            <td>{{ qna.id }}</td>
+            <td><a href="{% url 'qnaPwConfirm' qnaId=qna.id %}?">{{ qna.title }}</a></td>
+            <td>{{ qna.name}} </td>
+            <td>{{ qna.created_at | date:'m-d,H:i'  }}</td>
+        </tr>          
+    {% endfor %}
+    </table>   
+</section>
+
+{% endblock %}

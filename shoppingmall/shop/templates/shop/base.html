@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>H&M s</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/login.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/style1.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/otb.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/search.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/cart.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/detail.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/base.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/qnaCreate.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/qnaMain.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/qnaDetail.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/pwConfirm.css' %}"/>
+</head>
+<body>
+    <div class="wrap">
+
+        <!--header-->
+        <header>
+            <div class="innerHeader">
+               
+                <h1 class="logo"><a href="{% url 'index' %}">H&M<sub>s</sub></a></h1>
+                
+                <div class="related">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}"><p>LOGOUT</p></a>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <a href="{% url 'login' %}"><p>LOGIN</p></a>
+                    {% endif %}
+                    <a href="{% url 'cart' %}"><p>CART</p></a>
+                </div>  
+
+                <div class="related2">
+                    <a href="{% url 'search' %}"><p>SEARCH</p></a>
+                    <a href="{% url 'qnaList' %}"><p>Q&A</p></a>
+                </div>   
+                
+                <ul id="mainMenu">
+                    <li><a href="{% url 'otb' id=1 %}">OUTWEAR</a></li>
+                    <li><a href="{% url 'otb' id=2 %}">TOP</a></li>
+                    <li><a href="#">BOTTOM</a>
+                        <ul id="subMenu">
+                            <li><a href="{% url 'otb' id=3 %}">PANTS</a></li>
+                            <li><a href="{% url 'otb' id=4 %}">SKIRTS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>    
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <!--footer-->
+        <footer>
+            <div class="address">
+                <div>
+                    CEO<br>
+                    seowoo<br><br>
+                    Permit Number<br>
+                    080-822-0220<br><br>
+                    Address<br>
+                    서울특별시 종로구 종로 51
+                </div>
+
+                <div class="right">
+                    <h2>H&M s</h2><br>
+                    <a href="https://www.instagram.com/hm/" target="_blank"><img src="{% static 'shop/img/insta_logo2.png' %}" alt="인스타"
+                         width="30px" height="30px"><br>Instagram</a><br><br>
+                    <a href="https://www.facebook.com/hmsouthkorea/?brand_redir=21415640912" target="_blank"><img src="{% static 'shop/img/insta_logo.png' %}" alt="페이스북"
+                         width="30px" height="30px"><br>Facebook</a>
+                </div>
+            </div>
+   
+        </footer>
+        
+    </div>
+</body>
+</html>

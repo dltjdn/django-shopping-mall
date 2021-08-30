@@ -1,0 +1,17 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="qnaCreate">
+    <form action="{% url 'qnaCreate' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table height=200 bordercolor="white" 
+        cellspacing="5" class="qna">
+            {{ form.as_table }}
+        </table>
+        <button type="submit">OK</button>
+        
+    </form>
+</section>
+
+{% endblock %}

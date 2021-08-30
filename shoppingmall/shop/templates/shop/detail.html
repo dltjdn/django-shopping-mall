@@ -1,0 +1,58 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+        <!--section-->
+        <sectin>
+            <div id="grid">
+
+                <!--article1-->
+                <article>
+                    <div class="parent" style="margin-top:110px;">
+                        <div class="child1"><img src="{{ item.photo1.url }}"></div>
+                        <div class="Child2"><img src="{{ item.photo2.url }}"></div>
+                        <div class="Child3"><img src="{{ item.photo3.url }}"></div>
+                        <div class="Child4"><img src="{{ item.photo4.url }}"></div>
+                    </div>
+                </article>
+
+                <!--article2-->
+                <article>
+                    <div class="parent2">
+
+                        <h3>{{ item.name }}</h3>
+                        <i class="price">W {{ item.price }}</i><br><br>
+                        <span class="info" style="margin-left:0px;">INFO</span>
+                        <p>
+                            {{ item.info_1 }}<br>
+                            {{ item.info_2 }}<br>
+                            {{ item.info_3 }}<br>
+                        </p><br>
+                        <hr><hr><br>
+
+                        <!--장바구니& 구매 폼 -->
+                        <form action="{% url 'cart' %}" method="GET" >
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ item.num1 }}" name="item_num1">
+                            <input type="hidden" value="{{ item.num2 }}" name="item_num2">
+                            <label for="size">size</label>
+                            <select id="size" name="item_size"> 
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                            </select><br><br>
+
+                            <label for="num">수량&nbsp;&nbsp;&nbsp;</label>
+                            <input id="num" type="text" placeholder="직접입력" name="item_count" >
+                            <br><br>
+
+                            <input class="buy" type="submit" value="cart" name="cartIn">
+                            <input class="buy" type="submit" value="buy" name="buy">
+                        </form>
+
+                    </div>
+                </article>
+                
+            </div>
+        </sectin>
+{% endblock %}

@@ -1,0 +1,72 @@
+/*
+Q&A saerch, wirte 
+*/
+.searchWrite{
+    display:block;
+    overflow:hidden;
+    margin-top:200px;
+}
+
+
+.searchWrite .qnaLeft{
+    float:left;
+    margin-left:240px;
+}
+
+.qnaLeft #qnaSearch{
+    width:200px; height:50px;
+    border:none; border-bottom:2px solid black;
+    margin:15px;
+    outline:none;
+}
+
+.qnaLeft #qnaSubmit{
+    width:80px; height:50px;
+    color:black; background:white;
+    border:2px solid black; border-radius:20px;
+    font-size:16px;
+
+}
+
+.searchWrite .qnaRight{
+    float:right;
+    margin-right:270px;
+    font-size:18px;
+    border:none;
+    color:black; background:white;
+    border-bottom:2px solid black; 
+    width:80px;
+    padding-bottom:5px;
+    text-align:center;
+
+}
+
+
+/*
+리스트 부분
+*/
+.qnaMainSection{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:50px;
+    margin-bottom:80px;
+}
+
+
+.qnaMain{
+    justify-content:center;
+    align-items:center;
+    border-collapse:collapse; 
+}
+
+.qanMain tr{
+    border-bottom:1px solid silver;
+}
+
+.qnaMain tr td{
+    text-align:center;
+    padding:20px;
+}
+
+

@@ -1,0 +1,60 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+        <!--section-->
+        <section>
+            
+            <div class="section">
+           
+                <input type="radio" name="slide" id="slide01" checked style="margin-left:20px">
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+  
+               <div class="slidewrap">
+                   <ul class="slidelist">
+
+                       <li>
+                            <label for="slide03" class="left" style="background-image:url('../../static/shop/img/left.png');"></label>
+                            <a href="{% url 'detail' item.id 1 %}">
+                                <img src="{{ item.photo1.url }}">
+                                <h3 class="first"><i>{{ item.name1 }}</i></h3>
+                            </a>
+                            <a href="{% url 'detail' item.id 2 %}">
+                                <img src="{{ item.photo2.url }}">
+                                <h3 class="second"><i>{{ item.name2 }}</i></h3>
+                            </a>
+                            <label for="slide02" class="right" style="background-image:url('../../static/shop/img/right.png');"></label>
+                       </li>
+
+                       <li>
+                            <label for="slide01" class="left" style="background-image:url('../../static/shop/img/left.png');"></label>
+                            <a href="{% url 'detail' item.id 3 %}">
+                                <img src="{{ item.photo3.url }}">
+                                <h3 class="first"><i>{{ item.name3 }}</i></h3>
+                            </a>
+                            <a href="{% url 'detail' item.id 4 %}">
+                                <img src="{{ item.photo4.url }}">
+                                <h3 class="second"><i>{{ item.name4 }}</i></h3>
+                            </a>
+                            <label for="slide03" class="right" style="background-image:url('../../static/shop/img/right.png');"></label>                 
+                        </li>
+                        
+                        <li>
+                            <label for="slide02" class="left" style="background-image:url('../../static/shop/img/left.png');"></label>
+                            <a href="{% url 'detail' item.id 5 %}">
+                                <img src="{{ item.photo5.url }}">
+                                <h3 class="first"><i>{{ item.name5 }}</i></h3>
+                            </a>
+                            <a href="{% url 'detail' item.id 6 %}">
+                                <img src="{{ item.photo6.url }}">
+                                <h3 class="second"><i>{{ item.name6 }}</i></h3>
+                            </a>
+                            <label for="slide01" class="right" style="background-image:url('../../static/shop/img/right.png');"></label>
+                        </li>
+                    
+                   </ul>
+
+               </div>
+            </div>
+        </section>
+{% endblock %}

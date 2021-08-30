@@ -1,0 +1,13 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="pwConfirmSection">
+    <form action="{% url 'qnaDetail' %}?id={{qnaId}}" method="POST">
+        {% csrf_token %}
+        <input type="text" id="pwConfirm" name="pw" placeholder="비밀번호를 입력하세요">
+        <input type="submit" value="확인" class="pwOk">
+    </form>
+</section>
+
+{% endblock %}

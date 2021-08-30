@@ -1,0 +1,62 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<section class="cartAndBuy">
+    <table width="50%" height=200 bordercolor="white" 
+    cellspacing="5" class="cart">
+        <thead>
+            <tr>
+                <th>상품 정보</th>
+                <th>사이즈</th>
+                <th>판매가</th>
+                <th>수량</th>
+                <th>배송비</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                    <td><a href="{% url 'detail' num1 num2 %}"
+                        class="name">
+                        {{ name }}</a></td>
+                    <td>{{ size }}</td>
+                    <td>{{ price }}</td>
+                    <td>{{ count }}</td>
+                    <td>W2500</td>
+                    <td>W{{ total_price }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="total">
+                        상품구매금액 W{{ total_price }}  +  배송비 W2500  =  합계 W{{ total_price | add:2500 }}
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</section>   
+
+<section class="buy">
+    <div>
+        <h3>주문정보</h3>
+        <form action="{% url 'payBuy' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" value="{{ name }}" name="name">
+            <input type="hidden" value="{{ size }}" name="size">
+            <input type="hidden" value="{{ price }}" name="price">
+            <input type="hidden" value="{{ count }}" name="count">
+            <input type="hidden" value="{{ total_price }}" name="total_price">
+            <p>아이디 : {{ user.username}}</p>
+            <p>이메일 : {{user.email}}</p>
+            <p>주소 : {{ address }}</p>
+            <label for="name">이름 : </label>
+            <input type="text" id="name" name="customerName"><br>
+            <label for="telephone"> 휴대전화 : 010 </label>
+            <input type="text" id="telephone" placeholder="ex) 11112222" name="customerTel"><br>
+            <input type="submit" value="결제하기" id="pay">
+        </form>
+    </div>
+</section>
+
+
+
+{% endblock %}

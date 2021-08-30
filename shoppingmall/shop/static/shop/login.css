@@ -1,0 +1,129 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+/*
+section 전체
+*/
+.section{
+    margin:0;
+    text-align:center;  
+}
+
+.section #grid{
+    display:grid;
+    grid-template-columns:2.5fr 1fr;
+    margin:0;   
+}
+
+/*로그인*/
+.section #grid .login{
+    margin:250px 0 250px 380px; 
+}
+
+.section #grid .login h4{
+    font-family: 'Castoro', serif; 
+    font-size:19px; font-weight:400;
+    text-align:center;
+    margin-bottom:30px;
+}
+.section #text,.section #password{
+    padding:10px; margin:10px;
+    border:none; border-bottom:1.5px solid black;
+    width:350px; 
+    font-size:16px; font-weight:500;
+    outline:none;
+}
+
+.section #submit{
+    font-size:16px;
+    margin:20px;
+    border:none;
+    color:black; background:white;
+    border:2px solid black; border-radius:20px;
+    width:350px; height:50px;
+}
+
+
+/*회원가입*/
+.section #grid .register{
+   margin-top:0px; 
+}
+
+.section #grid .register input{
+    display:none;
+}
+
+.section #grid .register h4{
+    position:absolute;
+    left:670px; top:500px;
+    font-size:16px; font-weight:400;
+    color:black;
+    border-bottom:2px solid black;
+    margin:20px;
+    text-align:center;
+}
+
+.section div[class="sidebar"]{
+    width:400px; height:100vh;
+    background:white;
+    border-left:1.5px solid black;
+    position:fixed; z-index:1000;
+    right:-400px;
+    transition:all .5s;
+}
+
+.section div[class="sidebar"] h3{
+    margin-top:80px;
+    font-family: 'Castoro', serif;  
+}
+
+.section div[class="sidebar"] #id2,
+.section div[class="sidebar"] #password2,
+.section div[class="sidebar"] #email,
+.section div[class="sidebar"] #tel{
+    display:inline;
+    position:absolute; z-index:100;
+    top:150px; right:80px;
+    border:none;  border-bottom:1.5px solid black;
+    color:black; background:white;
+    width:230px; height:40px;
+    font-size:15px;
+    outline:none;
+}
+    
+.section div[class="sidebar"] #password2{
+    top:220px; 
+}
+.section div[class="sidebar"] #email{
+    top:290px; 
+}
+.section div[class="sidebar"] #tel{
+    top:360px; 
+}
+
+.section div[class="sidebar"] #submit2{
+    display:inline;
+    color:black; background:white;
+    position:absolute; z-index:100;
+    top:460px; right:80px;
+    width:230px; height:50px;
+    border:2px solid black; border-radius:20px; 
+}
+
+#signup + label img{  
+    position:fixed; z-index:2000;
+    top:30px; right:350px;
+    display:none;
+}
+
+
+#signup:checked + label img{
+    display:inline;  
+}
+
+#signup:checked + label + div{
+    right:0;
+}
+

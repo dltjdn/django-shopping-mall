@@ -1,0 +1,160 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+        {% if messages %}
+        {% for message in messages %}
+            <script>
+                alert("{{ message }}")
+            </script>
+        {% endfor %}
+        {% endif %}
+        <!--section1-->
+        <section class="main" style="background-image:url('../../static/shop/img/main.png');">  
+            <div class="inner"></div>
+        </section>
+
+        <!--section2-->
+        <section class="best">
+            <h2>BEST ITEMS</h2>
+            <div class="bestInner">
+        
+                <a href="{% url 'detail' top.id 3 %}">
+                    <img src="{{ top.photo3.url }}" width="300px" height="370px">
+                    <h3>{{ top.name3 }}</h3>
+                </a>
+            
+                <a href="{% url 'detail' top.id 4 %}">
+                <img src="{{ top.photo4.url }}" width="300px" height="370px">
+                    <h3>{{ top.name4 }}</h3>
+                </a>
+                
+                <a href="{% url 'detail' pants.id 3 %}">
+                    <img src="{{ pants.photo3.url }}" width="300px" height="370px">
+                    <h3>{{ pants.name3 }}</h3>
+                </a>
+                
+            </div>
+        </section>
+
+        <!--section2.2-->
+        <section class="best2">
+            <div class="best2Inner">
+                <a href="{% url 'detail' pants.id 4 %}">
+                    <img src="{{ pants.photo4.url }}" width="300px" height="370px">
+                    <h3>{{ pants.name4 }}</h3>
+                </a>
+            
+                <a href="{% url 'detail' skirt.id 3 %}">
+                    <img src="{{ skirt.photo3.url }}" width="300px" height="370px" >
+                    <h3>{{ skirt.name3 }}</h3>
+                </a>
+            
+                <a href="{% url 'detail' skirt.id 4 %}">
+                    <img src="{{ skirt.photo4.url }}" width="300px" height="370px" >
+                    <h3>{{ skirt.name4 }}</h3>
+                </a>
+            </div>
+        </section>
+
+
+
+        <!--section3-->
+        <section class="new" style="margin-top:0px">
+            <div class="inner">
+                <h2>NEW IN</h2>
+
+                <ul>
+                    <li>
+                        <a href="{% url 'detail' skirt.id 1 %}">
+                            <div class="img"><img src="{% static 'shop/img/Skirt1-mini.jpg' %}" width="315px" height="220px"></div>
+                            <h3>{{ skirt.name1 }}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'detail' skirt.id 6 %}">
+                            <div class="img"><img src="{% static 'shop/img/Skirt6-mini.jpg' %}" width="315px" height="220px"></div>
+                            <h3>{{ skirt.name6 }}</h3>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="row" id="second">
+                    <div class="guide">                      
+                        <a href="{% url 'detail' outwear.id 3 %}">
+                            <img src="{{ outwear.photo3.url }}" width="327px" height="460px">
+                            <h3>{{ outwear.name3 }}</h3>
+                        </a>
+                    </div>
+                    <div class="guide">
+                        <a href="{% url 'detail' outwear.id 4 %}">
+                            <img src="{{ outwear.photo4.url }}" width="327px" height="460px">
+                              <h3>{{ outwear.name4 }}</h3>
+                        </a>
+                    </div>
+                </div> 
+
+            </div>
+        </section>
+
+        <!--section3.2-->
+        <section class="new2" style="margin-top:0px">
+            <div class="inner">
+
+                <ul>
+                    <li>
+                        <a href="{% url 'detail' pants.id 1 %}">
+                            <p class="img"><img src="{% static 'shop/img/Pants1-mini.jpg' %}" height="220px"></p>
+                            <h3>{{ pants.name1 }}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'detail' pants.id 6 %}">
+                            <p class="img"><img src="{% static 'shop/img/Pants6-mini.jpg' %}" height="220px"></p>
+                            <h3>{{ pants.name6 }}</h3>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="row" id="second2">
+                    <div class="guide">                      
+                        <a href="{% url 'detail' top.id 5 %}">
+                            <p class="img"><img src="{{ top.photo5.url }}" width="327px" height="460px"></p>
+                            <h3>{{ top.name5 }}</h3>
+
+                        </a>
+                    </div>
+                    <div class="guide">
+                        <a href="{% url 'detail' top.id 6 %}">
+                            <p class="img"><img src="{{ top.photo6.url }}" width="327px" height="460px"></p>
+                              <h3>{{ top.name6 }}</h3>
+                        </a>
+                    </div>
+                </div> 
+
+            </div>
+        </section>
+
+        <!--section4-->
+        <section style="margin-top:0px;">
+            <div id="grid">
+
+                <div class="sea">
+                    <img src="{% static 'shop/img/sea.jpg' %}" alt="sea" width="330px" height="390px">
+                </div>
+
+                <div class="info">
+                    <h3>H&M s</h3><br><br>
+                    EMAIL<br>
+                    hana40004@naver.com<br><br>
+                    telephon<br>
+                    052-288-0765<br><br>
+                    Opening Ours<br>
+                    1PM-6PM<br>
+                    Sat.Sun.Hoiday Off<br>
+                <div>
+
+            </div>
+        </section>
+
+{% endblock %}
+      

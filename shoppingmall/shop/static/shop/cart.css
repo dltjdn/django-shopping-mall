@@ -1,0 +1,99 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+/*
+장바구니
+*/
+
+.cartAndBuy{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.cartAndBuy .cart{
+    justify-content:center;
+    align-items:center;
+    border-collapse:collapse; 
+    
+}
+
+.cartAndBuy .cart tr{
+    border-bottom:1px solid silver;
+}
+
+.cartAndBuy .cart tr th{
+    height:50px;
+}
+
+
+.cartAndBuy .cart tr td{
+    text-align:center;
+    padding:20px;
+}
+
+.cartAndBuy .cart tr td .name:hover{
+    border-bottom:1.5px solid black;
+}
+
+.cartAndBuy .cart tr td .delete{
+    border: none; border-bottom:1.5px solid black;
+    background-color: rgba(0,0,0,0); color:black;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.cartAndBuy .cart tr .total{
+    text-align:right;
+    padding:30px;
+}
+
+
+
+/*
+회원정보
+*/
+
+.buy{
+    display:flex;
+    justify-content:left;
+    align-items:center;
+    margin-top:0px;
+    margin-left:250px;
+    font-size:16px;
+}
+
+.buy h3{
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.buy p{
+    padding:15px;
+}
+
+.buy label{
+    padding:15px;
+}
+
+.buy input{
+    outline:none;
+    padding:15px 15px 10px 10px;
+    margin-bottom:5px;
+    border:none;
+    border-bottom:1.5px solid black;
+}
+
+
+.buy #pay{
+    font-size:16px;
+    margin:70px 70px 70px 0;
+    border:none;
+    color:black; background:white;
+    border:2px solid black; border-radius:20px;
+    width:200px; height:50px;
+    text-align:center;
+}

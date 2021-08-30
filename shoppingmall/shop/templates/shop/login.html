@@ -1,0 +1,60 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+        {% if messages %}
+            {% for message in messages %}
+                <script>
+                    alert("{{ message }}")
+                </script>
+            {% endfor %}
+        {% endif %}
+        <!--section-->
+        <section class="section">
+           <div id="grid" style="margin:0;">
+
+               <div class="login">
+                    <h4>SIGN IN</h4>
+                   
+                    <!--login form-->
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name = "id" id="text" placeholder="ID"><br>
+                        <input type="password" name = "password" id="password" placeholder="PASSWORD"><br>
+                        <input type="submit" id="submit" value="Log in"><br>
+                    </form>
+
+                </div>
+
+                <div class="register">
+
+                    <input type="checkbox" id="signup">
+                    <label for="signup">
+                        <h4>Create Account</h4>
+                        <img src="{% static  'shop/img/close.png' %}" width="20px" height="20px">
+                    </label>
+
+                    <div class="sidebar">
+                      <h3>CREATE AN ACCOUNT</h3>  
+
+                      <!--signupu form-->  
+                      <form action="{% url 'signup' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name= "signup_id" id="id2"  placeholder="아이디"><br>
+                        <input type="password" name="signup_password" id="password2"  placeholder="비밀번호"><br>
+                        <input type="email" name="signup_email" id="email" placeholder="이메일"><br>
+                        <input type="text" name="signup_address" id="tel"  placeholder="주소"><br>
+                        <input type="submit" id="submit2"  value="회원가입">
+                      </form>
+                    
+                    </div>
+
+                </div> 
+
+
+            </div>             
+                
+        </section>
+{% endblock %}
+        
+       
+        

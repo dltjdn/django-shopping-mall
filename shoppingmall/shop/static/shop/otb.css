@@ -1,0 +1,135 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+/*
+section
+*/
+
+section{
+    margin-top:180px;
+}
+
+/*TOP
+section h2{
+    font-family: 'Castoro', serif;  
+    font-size:24px; font-weight:bold;
+    text-align:center; 
+    margin:40px 40px 20px 40px;
+}
+*/
+
+.section {
+    margin:0 auto;
+}
+
+/*라디오버튼 디자인 */
+
+/*
+.section #slide01{
+    margin-left:530px;
+}
+*/
+.section input[type="radio"]{
+    background-color:white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 3px solid black;
+    border-radius: 30px;
+    width: 40px; height: 14px;
+    margin:20px;
+    text-align:center;
+}
+.section input[type="radio"]:checked{
+    background-color:black;   
+}
+
+/*넘어가는 슬라이드*/
+.section .slidewrap{
+    max-height:700px;
+    max-width:1000px;
+    margin:0 auto;
+    text-align:center;
+    overflow:hidden;
+}
+.section .slidelist{
+    white-space:nowrap;
+    font-size:0;
+}
+.section .slidelist > li{
+    display:inline-block;
+    vertical-align:middle;
+    width:100%;
+    position:relative;
+    transition:all .5s;
+}
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {
+    transform:translateX(0%);
+}
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {
+    transform:translateX(-100%);
+}
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {
+    transform:translateX(-200%);
+}
+
+
+/*커서 올렸을때 글자 띄우기*/
+.section .slidelist > li > a .first{
+	display:none;
+}
+.section .slidelist > li > a:hover .first{
+    display:inline;
+	color:whitesmoke;
+    font-size:20px;
+	position: absolute; z-index:10;
+	top: 50%; left: 250px; transform:translate( -50%, -50% );
+}
+.section .slidelist > li > a .second{
+    display:none;
+}
+.section .slidelist > li > a:hover .second{
+    display:inline;
+	color:whitesmoke;
+    font-size:20px;
+    position: absolute;z-index:10;
+	top: 50%; right:110px; transform:translate( -50%, -50% );   
+}
+
+
+/*커서 올렸을때 어둡게*/
+.section .slidelist > li > a img {
+    width:50%;
+    padding:10px 60px 50px 60px;
+    box-sizing:border-box;
+}
+.section .slidelist > li > a img:hover{
+    filter: contrast(30%);  
+}
+
+/*양 옆 화살표*/
+.section .slidelist label{
+    position:absolute; z-index:2;
+    top:50%; transform:translateY(-50%);
+    padding:30px; 
+    box-sizing:border-box;
+    cursor:pointer;
+}
+.section .slidelist .left{
+    left:0px;
+    background: center center / 100% no-repeat;
+}
+.section .slidelist .right{
+    right:0;
+    background: center center / 100% no-repeat;
+}
+
+
+/*미디어쿼리*/
+@media(max-width:1240px){
+    .section input[type="radio"]{
+        display:none;
+    }
+}
+
